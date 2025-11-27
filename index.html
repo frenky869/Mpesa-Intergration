@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Pesa Payment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="payment-card">
+            <div class="header">
+                <img src="mpesa-logo.png" alt="M-Pesa Logo" class="logo">
+                <h2>M-Pesa Payment</h2>
+            </div>
+            
+            <div class="payment-info">
+                <p class="amount">Amount: <span id="amountDisplay">KES 1,500.00</span></p>
+                <p class="description">Service Payment</p>
+            </div>
+
+            <form id="mpesaForm" class="payment-form">
+                <div class="form-group">
+                    <label for="phoneNumber">Enter your M-Pesa number:</label>
+                    <div class="input-group">
+                        <span class="prefix">+254</span>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="7XX XXX XXX"
+                            maxlength="9"
+                            required
+                        >
+                    </div>
+                    <small class="hint">Format: 712 345 678</small>
+                </div>
+
+                <button type="submit" class="pay-btn" id="payButton">
+                    Pay with M-Pesa
+                </button>
+            </form>
+
+            <div class="security-notice">
+                <p>🔒 Your payment is secure and encrypted</p>
+            </div>
+        </div>
+
+        <!-- Payment Status Modal -->
+        <div id="statusModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Processing Payment</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="statusMessage">
+                        <div class="loading-spinner"></div>
+                        <p>Waiting for M-Pesa prompt...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
